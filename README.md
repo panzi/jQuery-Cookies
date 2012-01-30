@@ -86,7 +86,7 @@ Returns `$`.
 
 ### $.cookie( map )
 
-Same as above but set or remove multiple cookies at once. The keys of the
+Same as above but set or remove multiple cookies at once. The keys of map the
 are the names of the cookies and the values are strings, `null` or settings
 like above.
 

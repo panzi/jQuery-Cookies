@@ -43,17 +43,17 @@ my taste.
 
 ## Reference
 
-### `$.cookie()`
+### $.cookie()
 
 Get all cookies as a map.
 
-### `$.cookie( name )`
+### $.cookie( name )
 
 Get value of a cookie. If the cookie is not set `undefined` will be returned.
 
 `name` A string denoting the cokkie to get.
 
-### `$.cookie( name, value [, expires [, path [, domain [, secure]]]] )`
+### $.cookie( name, value [, expires [, path [, domain [, secure]]]] )
 
 Set or remove a cookie.
 
@@ -78,13 +78,13 @@ If `true` is passed the current host is used.
 
 Returns `$`.
 
-### `$.cookie( name, settings )`
+### $.cookie( name, settings )
 
 Same as above but pass all arguments but the name in a map.
 
 Returns `$`.
 
-### `$.cookie( map )`
+### $.cookie( map )
 
 Same as above but set or remove multiple cookies at once. The keys of the
 are the names of the cookies and the values are strings, `null` or settings

@@ -51,7 +51,7 @@ Get all cookies as a map.
 
 Get value of a cookie. If the cookie is not set `undefined` will be returned.
 
-`name` A string denoting the cokkie to get.
+`name` A string denoting the cookie to get.
 
 ### $.cookie( name, value [, expires [, path [, domain [, secure]]]] )
 
@@ -59,7 +59,7 @@ Set or remove a cookie.
 
 `name` A string denoting the cookie to set.
 
-`value` The value to wich the cookie shall be set as a string. You can pass
+`value` The value to which the cookie shall be set as a string. You can pass
 `null` if you want to delete the cookie.
 
 `expires` The expiration date of the cookie as string or `Date` object or

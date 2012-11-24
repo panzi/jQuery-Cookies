@@ -71,7 +71,7 @@ Set or remove a cookie.
 
 `expires` The expiration date of the cookie as string or `Date` object or
 the number of days in which the cookie will expire (can be negative). If
-`false` is passed a expiration date in the very distant future (2000 years)
+`false` is passed an expiration date in the very distant future (2000 years)
 is used. If not given or `true` is passed the cookie will expire at the end
 of the browser session.
 

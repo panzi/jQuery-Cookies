@@ -6,40 +6,47 @@ my taste.
 
 ## Examples
 
-	// get cookie
-	var name = $.cookie("name");
-	if (name === undefined) {
-		console.log("cookie not set");
-	}
+```javascript
+// get cookie
+var name = $.cookie("name");
+if (name === undefined) {
+	console.log("cookie not set");
+}
 	
-	// set cookie
-	$.cookie("name","John Smith");
+// set cookie
+$.cookie("name","John Smith");
 
-	// get all cookies
-	var all_cookies = $.cookie();
-	if ("name" in all_cookies) {
-		console.log(all_cookies.name);
+// get all cookies
+var all_cookies = $.cookie();
+if ("name" in all_cookies) {
+	console.log(all_cookies.name);
+}
+
+// delete cookie
+$.cookie("name",null);
+
+// keep cookie for 2 days
+$.cookie("name","John Smith",2);
+
+// keep cookie until a certain date and restrict it to a certain path and domain
+$.cookie("world","exists",new Date(2012,12-1,21),"/path","example.com");
+
+// set/delete multiple cookies at once
+$.cookie({
+	name: "John Smith",
+	occupation: null,
+	age: {
+		value: "30",
+		expires: 365,
+		secure: true
 	}
+});
 
-	// delete cookie
-	$.cookie("name",null);
-
-	// keep cookie for 2 days
-	$.cookie("name","John Smith",2);
-
-	// keep cookie until a certain date and restrict it to a certain path and domain
-	$.cookie("world","exists",new Date(2012,12-1,21),"/path","example.com");
-
-	// set/delete multiple cookies at once
-	$.cookie({
-		name: "John Smith",
-		occupation: null,
-		age: {
-			value: "30",
-			expires: 365,
-			secure: true
-		}
-	});
+// remove cookie and test wheter it was set:
+if ($.removeCookie("name")) {
+	console.log("name was set");
+}
+```
 
 ## Reference
 
@@ -78,6 +85,12 @@ If `true` is passed the current host is used.
 
 Returns `$`.
 
+### $.cookie( name, value, settings )
+
+Same as above but pass all arguments but the name and value in a map.
+
+Returns `$`.
+
 ### $.cookie( name, settings )
 
 Same as above but pass all arguments but the name in a map.
@@ -91,6 +104,24 @@ are the names of the cookies and the values are strings, `null` or settings
 like above.
 
 Returns `$`.
+
+### $.removeCookie( name )
+
+Remove a cookie.
+
+Returns `true` if the cookie was set before, `false` otherwise.
+
+### $.removeCookie( name [, path [, domain [, secure]]] )
+
+Remove a cookie with the given settings.
+
+Returns `true` if the cookie was set before, `false` otherwise.
+
+### $.removeCookie( name, settings )
+
+Remove a cookie with the given settings.
+
+Returns `true` if the cookie was set before, `false` otherwise.
 
 ## License
 

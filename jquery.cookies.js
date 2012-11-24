@@ -44,7 +44,7 @@
 				}
 
 			case 3:
-				if (typeof(expires) === "object") {
+				if (typeof(expires) === "object" && !(expires instanceof Date)) {
 					path    = expires.path;
 					domain  = expires.domain;
 					secure  = expires.secure;

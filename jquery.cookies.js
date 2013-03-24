@@ -1,6 +1,20 @@
 "use strict";
 
 (function ($,undefined) {
+	function decode (s) {
+		try {
+			return decodeURIComponent(s);
+		}
+		catch (e) {
+			try {
+				return unescape(s);
+			}
+			catch (e2) {
+				return s;
+			}
+		}
+	}
+
 	function get () {
 		var cookies = {};
 		if (document.cookie) {
@@ -11,12 +25,12 @@
 				var key, value;
 				
 				if (pos < 0) {
-					key   = decodeURIComponent(value);
+					key   = decode(value);
 					value = undefined;
 				}
 				else {
-					key   = decodeURIComponent(value.slice(0,pos));
-					value = decodeURIComponent(value.slice(pos+1));
+					key   = decode(value.slice(0,pos));
+					value = decode(value.slice(pos+1));
 				}
 
 				cookies[key] = value;

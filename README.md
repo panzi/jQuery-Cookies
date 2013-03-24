@@ -54,6 +54,13 @@ if ($.removeCookie("name")) {
 
 Get all cookies as a map.
 
+**NOTE:** Cookie values that wheren't encoded using `encodeURIComponent` might
+get corrupted, because any read cookie is passed through `decodeURIComponent`.
+If this fails though it then will be tried to decoded it using `unescape` and
+if that also fails the raw cookie value will be returned.
+
+Cookies set/read through this API will always be properly encoded/decoded.
+
 ### $.cookie( name )
 
 Get value of a cookie. If the cookie is not set `undefined` will be returned.
